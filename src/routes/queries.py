@@ -46,10 +46,10 @@ def save_init_data(session, init_data, well_data_id):
     session.commit()
 
 
-def save_vlp_data(session, vlp, init_data_id):
+def save_vlp_data(session, vlp):
     vlp = VLP(
-        vlp=vlp,
-        well_id=init_data_id
+        q_liq=str(vlp["q_liq"]),
+        p_wf=str(vlp["p_wf"]),
     )
     session.add(vlp)
     session.commit()
